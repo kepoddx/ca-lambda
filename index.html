@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/knockout/build/output/knockout-latest.js"></script>
+    <script>
+    (function () {
+            $(document).ready(function () {
+                var url = 'https://fwo345drjk.execute-api.us-east-1.amazonaws.com/test/';
+                $.getJSON(url)
+                    .then(function (d) {
+                        var Render = view(d);
+                        ko.applyBindings(new Render())
+                    })
+
+
+
+                function view(data) {
+                    return function () {
+                        this.stories = data;
+                    }
+                }
+            })
+        })()
+    </script>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li data-bind="foreach: stories">
+            <a data-bind="attr: { href: link}" target="_blank">
+                <h2 data-bind="html: title"></h2>
+                <img data-bind="attr: { src: image}" alt="">
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

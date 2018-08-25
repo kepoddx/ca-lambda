@@ -1,0 +1,28 @@
+{
+  "name": "ca-lambda",
+  "version": "1.0.0",
+  "description": "lambda rxjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --watch --inline",
+    "postinstall": "typings install"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.3.2",
+    "ts-loader": "^4.3.0",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.8.3",
+    "typings": "^2.1.1",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "feed-to-json-promise": "^1.6.1",
+    "jquery": "^3.3.1",
+    "knockout": "^3.4.2",
+    "rxjs": "^6.2.0"
+  }
+}
